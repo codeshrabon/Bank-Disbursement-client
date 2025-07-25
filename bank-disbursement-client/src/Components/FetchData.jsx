@@ -53,6 +53,7 @@ function FetchData() {
     <th>Borrower Limit</th>
     <th>Tenure</th>
     <th>Loan Type</th>
+    <th>Action</th>
   </tr>
 </thead>
 
