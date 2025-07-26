@@ -4,16 +4,17 @@
 // import './App.css'
 // import EditableTable from './Components/EditableTable';
 // import TestingEditableTable from './Components/TestingEditableTable';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FetchData from './Components/FetchData';
 import ShowData from './Components/ShowData';
 import EditData from './Components/EditData'
+import AddDataForm from './Components/AddDataForm'
 
 
 function App() {
   return(
     <div>
-      <h1>Bank Disbursement edit a table</h1>
+      <h1>Bank Disbursement table</h1>
       
       
       {/* <FetchData /> */}
@@ -21,8 +22,10 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<FetchData />} />
-        {/* <Route path="/show/:id" element={<ShowData />} />
-        <Route path="/edit/:id" element={<EditData />} /> */}
+        <Route path="/add" element={<AddDataForm />} />
+
+         <Route path="/show/:id" element={<ShowData />} />
+        <Route path="/edit/:id" element={<EditData />} />
       </Routes>
     </BrowserRouter>
     </div>

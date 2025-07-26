@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ActionButtons from "./ActionButtons";
 
 function FetchData() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,6 +35,11 @@ function FetchData() {
 
   return (
     <div>
+      {/* adding add button  */}
+      <div style={{ marginBottom: '20px' }}>
+        <button onClick={() => navigate('/add')}>➕ Add New Data</button>
+      </div>
+
       {data && data.length > 0 ? (
         <table border="2" cellPadding={10}>
           <thead>
@@ -58,7 +65,9 @@ function FetchData() {
 </thead>
 
 <tbody>
+  
   {data.map((item) => (
+    
     <tr key={item.id}>
       <td>{item.account_name}</td>
       <td>{item.amount}</td>
@@ -76,9 +85,12 @@ function FetchData() {
       <td>{item.signal_borrower_exposure_limit}</td>
       <td>{item.tenure}</td>
       <td>{item.type_of_loan}</td>
-      <ActionButtons id={item.id} />
+      <td><ActionButtons id={item.id} /></td>
     </tr>
+    
+    
   ))}
+  
 </tbody>
 
         </table>

@@ -1,7 +1,8 @@
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function ActionButtons({ id }) {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div style={{ display: 'flex', gap: '6px' }}>
