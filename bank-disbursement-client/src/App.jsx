@@ -14,11 +14,12 @@ import AddDataForm from './Components/AddDataForm'
 function App() {
   return(
     <div>
+      <div className='text-center'>
       <h1>Bank Disbursement table</h1>
-      
+      </div>
       
       {/* <FetchData /> */}
-
+      
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<FetchData />} />

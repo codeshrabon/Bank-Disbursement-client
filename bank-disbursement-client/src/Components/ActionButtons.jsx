@@ -5,10 +5,10 @@ function ActionButtons({ id }) {
   const navigate = useNavigate();
 
   return (
-    <div style={{ display: 'flex', gap: '6px' }}>
-      <button onClick={() => navigate(`/show/${id}`)}>Show</button>
-      <button onClick={() => navigate(`/edit/${id}`)}>Edit</button>
-      <button
+    <div style={{ display: 'flex', gap: '5px' }}>
+      <button type="submit" class="btn btn-primary" onClick={() => navigate(`/show/${id}`)}>Show</button>
+      <button type="submit" class="btn btn-primary" onClick={() => navigate(`/edit/${id}`)}>Edit</button>
+      <button type="submit" class="btn btn-primary"
   onClick={async () => {
     if (confirm("Are you sure to delete?")) {
       await axios.delete(`http://localhost:8080/api/disbursement/deleteId/${id}`);

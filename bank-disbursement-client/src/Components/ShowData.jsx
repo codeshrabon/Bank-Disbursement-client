@@ -15,9 +15,18 @@ function ShowData() {
   if (!info) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h2>Data for ID: {id}</h2>
-      <pre>{JSON.stringify(info, null, 2)}</pre>
+    <div className="container mt-4">
+      <h2 className="mb-3">Details for ID: {id}</h2>
+      <table className="table table-bordered table-striped">
+        <tbody>
+          {Object.entries(info).map(([key, value]) => (
+            <tr key={key}>
+              <th>{key.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase())}</th>
+              <td>{value !== null ? value.toString() : "N/A"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
