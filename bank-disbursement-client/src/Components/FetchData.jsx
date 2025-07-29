@@ -46,7 +46,7 @@ function FetchData() {
           <div className="row justify-content-start">
         <table className="table table-bordered table-striped-columns" border="2" cellPadding={10}>
           <thead>
-                <tr >
+                <tr className="text-center align-middle">
                 <th>Account Name</th>
                 <th>Amount</th>
                 <th>Client Verification</th>
@@ -71,7 +71,7 @@ function FetchData() {
               
               {data.map((item) => (
                 
-                <tr key={item.id}>
+                <tr className="text-center align-middle" key={item.id}>
                   <td>{item.account_name}</td>
                   <td>{item.amount}</td>
                   <td>{item.client_identification_done_with_varification}</td>
@@ -88,7 +88,7 @@ function FetchData() {
                   <td>{item.signal_borrower_exposure_limit}</td>
                   <td>{item.tenure}</td>
                   <td>{item.type_of_loan}</td>
-                  <td><ActionButtons id={item.id} /></td>
+                  <td className="text-center align-middle"><ActionButtons id={item.id} /></td>
                 </tr>
                 
                 
