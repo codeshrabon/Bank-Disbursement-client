@@ -9,6 +9,7 @@ import FetchData from './Components/FetchData';
 import ShowData from './Components/ShowData';
 import EditData from './Components/EditData'
 import AddDataForm from './Components/AddDataForm'
+import ExampleTest from './Components/ExampleTest';
 
 
 function App() {
@@ -16,19 +17,21 @@ function App() {
     <div>
       <div className='text-center'>
       <h1>Bank Disbursement table</h1>
-      </div>
+      
       
       {/* <FetchData /> */}
       
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<FetchData />} />
+        <Route path="/" element={<ExampleTest />} />
+        {/* <Route path="/" element={<FetchData />} />
         <Route path="/add" element={<AddDataForm />} />
 
          <Route path="/show/:id" element={<ShowData />} />
-        <Route path="/edit/:id" element={<EditData />} />
+        <Route path="/edit/:id" element={<EditData />} /> */}
       </Routes>
     </BrowserRouter>
+    </div>
     </div>
   );
 }

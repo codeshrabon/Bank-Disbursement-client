@@ -36,12 +36,12 @@ function FetchData() {
   }
 
   return (
-    <div>
+    <div className="container" style={{marginLeft:'20px', padding:'10px'}}>
       {/* adding add button  */}
-      <div style={{ marginBottom: "10px", marginLeft: "60px" }}>
+      <div className= "d-flex justify-content-start mb-3 " >
         <button
           type="submit"
-          class="btn btn-primary"
+          className="btn btn-primary"
           onClick={() => navigate("/add")}
         >
           ➕ Add New Data
@@ -55,6 +55,7 @@ function FetchData() {
               className="table table-bordered table-striped-columns"
               border="2"
               cellPadding={10}
+              style={{marginRight:'10px',padding:'20px'}}
             >
               <thead class="table-dark">
                 <tr className="text-center align-middle">
