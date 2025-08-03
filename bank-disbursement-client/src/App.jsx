@@ -23,12 +23,12 @@ function App() {
       
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ExampleTest />} />
-        {/* <Route path="/" element={<FetchData />} />
+        {/* <Route path="/" element={<ExampleTest />} /> */}
+        <Route path="/" element={<FetchData />} />
         <Route path="/add" element={<AddDataForm />} />
 
          <Route path="/show/:id" element={<ShowData />} />
-        <Route path="/edit/:id" element={<EditData />} /> */}
+        <Route path="/edit/:id" element={<EditData />} />
       </Routes>
     </BrowserRouter>
     </div>
