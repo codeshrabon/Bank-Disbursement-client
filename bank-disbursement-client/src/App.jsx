@@ -9,12 +9,11 @@ import FetchData from './Components/FetchData';
 import ShowData from './Components/ShowData';
 import EditData from './Components/EditData'
 import AddDataForm from './Components/AddDataForm'
-import ExampleTest from './Components/ExampleTest';
 
 
 function App() {
   return(
-    <div>
+    <div className='p-3 mb-2 bg-secondary text-white'>
       <div className='text-center'>
       <h1>Bank Disbursement table</h1>
       

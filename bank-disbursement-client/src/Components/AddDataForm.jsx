@@ -48,22 +48,14 @@ function AddDataForm() {
 
   return (
     <div
-      className="container mt-4"
-      style={{ display: "flex", gap: "20px", padding: "10px" }}
-    >
+      className="container md-4 border ">
       <h2>Add New Info</h2>
-      <div className="row col-md-7 mb-3 align-items-center">
+      <div className="row">
         <form
           onSubmit={handleSubmit}
-          style={{
-            display: "flex",
-            gap: "10px",
-            marginLeft: "40px",
-            padding: "25px",
-          }}
         >
-          <div className="row col-md-7 mb-3 align-items-center">
-            <div className="col mb-3">
+          <div className="row">
+            <div className="col mb-2 ">
               <label className="form-label">Account Name</label>
               <input
                 type="text"
@@ -74,7 +66,9 @@ function AddDataForm() {
                 required
               />
 
-              <label className="form-label">Loan Account Number</label>
+              <label className="form-label">
+                Loan Account Number
+              </label>
               <input
                 type="text"
                 name="loan_account_number"
@@ -113,8 +107,6 @@ function AddDataForm() {
                 onChange={handleChange}
                 required
               />
-
-              <div className="col-md-6 mb-3">
                 <label className="form-label">Tenure</label>
                 <input
                   type="text"
@@ -124,10 +116,8 @@ function AddDataForm() {
                   onChange={handleChange}
                   required
                 />
-              </div>
 
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Type of Loan</label>
+              <label className="form-label">Type of Loan</label>
                 <input
                   type="text"
                   name="type_of_loan"
@@ -136,9 +126,9 @@ function AddDataForm() {
                   onChange={handleChange}
                   required
                 />
-              </div>
+              
 
-              <div className="col-md-6 mb-3">
+              
                 <label className="form-label">Eligible Security Value</label>
                 <input
                   type="number"
@@ -147,9 +137,9 @@ function AddDataForm() {
                   value={formData.eligible_security_value}
                   onChange={handleChange}
                 />
-              </div>
+              
 
-              <div className="col-md-6 mb-3">
+              
                 <label className="form-label">Security Coverage</label>
                 <input
                   type="number"
@@ -158,9 +148,9 @@ function AddDataForm() {
                   value={formData.security_coverage}
                   onChange={handleChange}
                 />
-              </div>
+              
 
-              <div className="col-md-6 mb-3">
+              
                 <label className="form-label">Security Details</label>
                 <input
                   type="text"
@@ -169,23 +159,11 @@ function AddDataForm() {
                   value={formData.security_details_as_per_sanction}
                   onChange={handleChange}
                 />
-              </div>
+              
 
               {/* Checkboxes in a single column */}
-              <div className="col-md-6 mb-3">
+              
                 <div className="form-check">
-                  {/* <input
-                  className="form-check-input"
-                  type="checkbox"
-                  name="client_identification_done_with_varification"
-                  checked={
-                    formData.client_identification_done_with_varification
-                  }
-                  onChange={handleChange}
-                />
-                <label className="form-check-label">
-                  Client Verification Done
-                </label> */}
                   <div className="mb-3">
                     <label className="form-label d-block">
                       Client Verification Done:
@@ -364,9 +342,9 @@ function AddDataForm() {
                     </div>
                   </div>
                 </div>
-              </div>
+              
 
-              <div className="col-md-6 mb-3">
+              
                 <label className="form-label">Borrower Exposure Limit</label>
                 <input
                   type="number"
@@ -375,7 +353,6 @@ function AddDataForm() {
                   value={formData.signal_borrower_exposure_limit}
                   onChange={handleChange}
                 />
-              </div>
 
               <div className="col-12 mb-3">
                 <label className="form-label">Comment</label>
@@ -388,28 +365,19 @@ function AddDataForm() {
               </div>
             </div>
           </div>
-          <div>
+          <div className="col-12">
             <button
               type="submit"
               className="btn btn-primary"
-              style={{ marginTop: "3px" }}
+              style={{ marginBottom: "18px" }}
             >
               Update
             </button>
           </div>
 
-          {/* <button type="submit" className="btn btn-primary">Add Info</button> */}
+          
         </form>
       </div>
-      {/* <div>
-        <button
-          type="submit"
-          className="btn btn-primary"
-          style={{ marginTop: "3px" }}
-        >
-          Update
-        </button>
-      </div> */}
     </div>
   );
 }
