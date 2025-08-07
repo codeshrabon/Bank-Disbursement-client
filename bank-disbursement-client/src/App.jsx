@@ -1,9 +1,4 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import EditableTable from './Components/EditableTable';
-// import TestingEditableTable from './Components/TestingEditableTable';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FetchData from './Components/FetchData';
 import ShowData from './Components/ShowData';
@@ -17,16 +12,13 @@ function App() {
       <div className='text-center'>
       <h1>Bank Disbursement table</h1>
       
-      
-      {/* <FetchData /> */}
-      
       <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<ExampleTest />} /> */}
+        
         <Route path="/" element={<FetchData />} />
         <Route path="/add" element={<AddDataForm />} />
 
-         <Route path="/show/:id" element={<ShowData />} />
+        <Route path="/show/:id" element={<ShowData />} />
         <Route path="/edit/:id" element={<EditData />} />
       </Routes>
     </BrowserRouter>
