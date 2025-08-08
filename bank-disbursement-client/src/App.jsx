@@ -27,22 +27,4 @@ function App() {
   );
 }
 
-// export default App
-
-// import FetchData from "./components/FetchData";
-//import ShowData from "./components/ShowData";
-// import EditData from "./components/EditData";
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <Routes>
-//         <Route path="/" element={<FetchData />} />
-//         {/* <Route path="/show/:id" element={<ShowData />} />
-//         <Route path="/edit/:id" element={<EditData />} /> */}
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// }
-
 export default App;
