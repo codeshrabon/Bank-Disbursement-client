@@ -58,103 +58,99 @@ function FetchData() {
 
       {currentItems.length > 0 ? (
         <div className="container-fluid px-4">
-          <div className="row justify-content-center">
-            <div className="col-12">
-              <div className="table-responsive">
-                <table className="table table-bordered table-striped-columns text-center align-middle">
-                  <thead className="table-dark">
-                    <tr>
-                      <th>Account Name</th>
-                      <th>Amount</th>
-                      <th>Client Verification</th>
-                      <th>Comment</th>
-                      <th>Compliance</th>
-                      <th>Disbursement Date</th>
-                      <th>Security Value</th>
-                      <th>Fund Utilization</th>
-                      <th>Guarantor Verification</th>
-                      <th>Loan Account</th>
-                      <th>Interest Rate</th>
-                      <th>Security Coverage</th>
-                      <th>Security Details</th>
-                      <th>Borrower Limit</th>
-                      <th>Tenure</th>
-                      <th>Loan Type</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {currentItems.map((item) => (
-                      <tr key={item.id}>
-                        <td>{item.account_name}</td>
-                        <td>{item.amount}</td>
-                        <td>
-                          {item.client_identification_done_with_varification
-                            ? "Yes"
-                            : "No"}
-                        </td>
-                        <td>{item.comment}</td>
-                        <td>{item.compliance_with_credit_policy}</td>
-                        <td>{item.disbursement_date}</td>
-                        <td>{item.eligible_security_value}</td>
-                        <td>{item.fund_utilization_ensured ? "Yes" : "No"}</td>
-                        <td>
-                          {item.guarantor_identification_done_with_verification
-                            ? "Yes"
-                            : "No"}
-                        </td>
-                        <td>{item.loan_account_number}</td>
-                        <td>{item.rate_of_interest}</td>
-                        <td>{item.security_coverage}</td>
-                        <td>{item.security_details_as_per_sanction}</td>
-                        <td>{item.signal_borrower_exposure_limit}</td>
-                        <td>{item.tenure}</td>
-                        <td>{item.type_of_loan}</td>
-                        <td>
-                          <ActionButtons id={item.id} />
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+          <div className="table-responsive">
+            <table className="table table-bordered table-striped-columns text-center align-middle rounded">
+              <thead className="table-dark">
+                <tr>
+                  <th>Account Name</th>
+                  <th>Amount</th>
+                  <th>Client Verification</th>
+                  <th>Comment</th>
+                  <th>Compliance</th>
+                  <th>Disbursement Date</th>
+                  <th>Security Value</th>
+                  <th>Fund Utilization</th>
+                  <th>Guarantor Verification</th>
+                  <th>Loan Account</th>
+                  <th>Interest Rate</th>
+                  <th>Security Coverage</th>
+                  <th>Security Details</th>
+                  <th>Borrower Limit</th>
+                  <th>Tenure</th>
+                  <th>Loan Type</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {currentItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.account_name}</td>
+                    <td>{item.amount}</td>
+                    <td>
+                      {item.client_identification_done_with_varification
+                        ? "Yes"
+                        : "No"}
+                    </td>
+                    <td>{item.comment}</td>
+                    <td>{item.compliance_with_credit_policy}</td>
+                    <td>{item.disbursement_date}</td>
+                    <td>{item.eligible_security_value}</td>
+                    <td>{item.fund_utilization_ensured ? "Yes" : "No"}</td>
+                    <td>
+                      {item.guarantor_identification_done_with_verification
+                        ? "Yes"
+                        : "No"}
+                    </td>
+                    <td>{item.loan_account_number}</td>
+                    <td>{item.rate_of_interest}</td>
+                    <td>{item.security_coverage}</td>
+                    <td>{item.security_details_as_per_sanction}</td>
+                    <td>{item.signal_borrower_exposure_limit}</td>
+                    <td>{item.tenure}</td>
+                    <td>{item.type_of_loan}</td>
+                    <td>
+                      <ActionButtons id={item.id} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
-                {/* Pagination Controls */}
-                <div className="d-flex justify-content-between align-items-center mt-3">
-                  <div>
-                    Page {currentPage} of {totalPages}
-                  </div>
-                  <div>
-                    <button
-                      className="btn btn-outline-secondary mx-1"
-                      onClick={() => paginate(currentPage - 1)}
-                      disabled={currentPage === 1}
-                    >
-                      Previous
-                    </button>
+            {/* Pagination Controls */}
+            <div className="d-flex justify-content-between align-items-center mt-3">
+              <div>
+                Page {currentPage} of {totalPages}
+              </div>
+              <div>
+                <button
+                  className="btn btn-outline-secondary mx-1"
+                  onClick={() => paginate(currentPage - 1)}
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </button>
 
-                    {[...Array(totalPages).keys()].map((pageNum) => (
-                      <button
-                        key={pageNum + 1}
-                        className={`btn mx-1 ${
-                          currentPage === pageNum + 1
-                            ? "btn-primary"
-                            : "btn-outline-primary"
-                        }`}
-                        onClick={() => paginate(pageNum + 1)}
-                      >
-                        {pageNum + 1}
-                      </button>
-                    ))}
+                {[...Array(totalPages).keys()].map((pageNum) => (
+                  <button
+                    key={pageNum + 1}
+                    className={`btn mx-1 ${
+                      currentPage === pageNum + 1
+                        ? "btn-primary"
+                        : "btn-outline-primary"
+                    }`}
+                    onClick={() => paginate(pageNum + 1)}
+                  >
+                    {pageNum + 1}
+                  </button>
+                ))}
 
-                    <button
-                      className="btn btn-outline-secondary mx-1"
-                      onClick={() => paginate(currentPage + 1)}
-                      disabled={currentPage === totalPages}
-                    >
-                      Next
-                    </button>
-                  </div>
-                </div>
+                <button
+                  className="btn btn-outline-secondary mx-1"
+                  onClick={() => paginate(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </button>
               </div>
             </div>
           </div>
